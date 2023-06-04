@@ -13,7 +13,7 @@ const getAllProjectsQuery = `{
 type getAllProjectsQueryType = Record<'allProjects', Project[]>;
 
 const allProjectsResolver = ({ allProjects }: getAllProjectsQueryType) => allProjects;
-const allProjectsReject = (err) => console.log(err);
+const allProjectsReject = (err: Error) => console.log(err);
 
 export const getAllProjects = () =>
 	query<getAllProjectsQueryType, Project[]>(getAllProjectsQuery).then(
