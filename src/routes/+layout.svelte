@@ -1,12 +1,16 @@
 <script>
+	import Dialogs from 'webkit/ui/Dialog/Dialogs.svelte';
+
 	import './styles.css';
 </script>
 
 <div class="app">
-	<main>
-		<slot />
-	</main>
+	<main><slot /></main>
 </div>
+
+{#if process.browser}
+	<Dialogs />
+{/if}
 
 <style>
 	.app {
